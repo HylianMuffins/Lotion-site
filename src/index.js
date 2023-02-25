@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NoSelection from './NoSelection';
+import Layout from './Layout';
+import TestNote1 from './TestNote1';
+import TestNote2 from './TestNote2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<NoSelection />}></Route>
+            <Route path="/1" elemnt={<TestNote1 />}></Route>
+            <Route path="/2" elemnt={<TestNote2 />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
