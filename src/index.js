@@ -16,8 +16,7 @@ root.render(
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<NoSelection />}></Route>
-            <Route path="/1" elemnt={<TestNote1 />}></Route>
-            <Route path="/2" elemnt={<TestNote2 />}></Route>
+            <Route path="/1" element={<TestNote1 />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

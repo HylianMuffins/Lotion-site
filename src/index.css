@@ -24,11 +24,11 @@ html, body, #root {
 
 
 
+/* App header */
 nav {
   display: flex;
   justify-content: center;
   border-top: 6px solid rgb(50, 12, 50);
-  border-bottom: 1px solid lightgrey;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -64,22 +64,25 @@ nav {
 
 
 
+/* Main body of app */
 main {
   display: flex;
   height: calc(100% - 89px);
 }
 
 
+
+/* Note selection window */
 #notes {
   display: flex;
   flex-direction: column;
   width: 20%;
-  border-right: 1px solid lightgrey;
 }
 
 #notes-header {
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid lightgrey;
   border-bottom: 2px solid lightgrey;
   padding: 15px;
   padding-top: 10px;
@@ -104,6 +107,56 @@ main {
 
 
 
+
+/* Note */
+.note{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+/* Note title and info */
+.note-header {
+  display: flex;
+  height: 90px;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+}
+
+.note-info {
+  height: 100%;
+  width: 85%;
+  padding: 20px;
+}
+
+.note-title-input {
+  width: 100%;
+  font-size: x-large;
+  border: none;
+  resize: none;
+  outline: none;
+}
+
+input[type="datetime-local"] {
+  border: none;
+  font-size: small;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.note-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 15%;
+}
+.note-buttons > *:hover {
+  cursor: pointer;
+}
+
+
+/* Note content */
 #no-note {
   display: flex;
   justify-content: center;
@@ -112,4 +165,12 @@ main {
   font-size: xx-large;
   font-weight: 500;
   color: rgb(130, 130, 130);
+}
+
+.quill {
+  height: calc(100% - 90px);
+  width: 100%;
+}
+.ql-container.ql-snow {
+  height: calc(100% - 42px);
 }
