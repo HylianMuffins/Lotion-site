@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NoSelection from './NoSelection';
 import Layout from './Layout';
 import TestNote1 from './TestNote1';
-import TestNote2 from './TestNote2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
