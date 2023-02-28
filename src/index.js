@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NoSelection from './NoSelection';
 import Layout from './Layout';
 import Note from './Note';
@@ -19,6 +19,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
+            <Route path="/" element={<Navigate to="/notes"/>}></Route>
             <Route path="/notes" element={<NoSelection />}></Route>
             <Route path="/notes/:noteNumber" element={<SavedNote />}></Route>
             <Route path="/notes/:noteNumber/edit" element={<Note />}></Route>
