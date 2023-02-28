@@ -5,7 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NoSelection from './NoSelection';
 import Layout from './Layout';
-import TestNote1 from './TestNote1';
+import Note from './Note';
+import SavedNote from './SavedNote';
+
+if (localStorage.getItem("noteList") == null) {
+  localStorage.setItem("noteList", JSON.stringify([]));
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,8 +19,9 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<NoSelection />}></Route>
-            <Route path="/1" element={<TestNote1 />}></Route>
+            <Route path="/notes" element={<NoSelection />}></Route>
+            <Route path="/notes/:noteNumber" element={<SavedNote />}></Route>
+            <Route path="/notes/:noteNumber/edit" element={<Note />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

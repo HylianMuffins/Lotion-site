@@ -21,26 +21,33 @@ a {
 html, body, #root {
   height: 100%;
 }
-
+.button {
+  user-select: none;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(50, 12, 50);
+  color: white;
+}
 
 
 /* App header */
 nav {
+  position: relative;
   display: flex;
   justify-content: center;
   border-top: 6px solid rgb(50, 12, 50);
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 #burger-button {
   position: absolute;
-  top: 25px;
-  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80px;
+  left: 0;
   font-size: xx-large;
-}
-#burger-button:hover {
-  cursor: pointer;
 }
 
 #page-title {
@@ -53,6 +60,7 @@ nav {
 #page-name {
   font-size: xx-large;
   color: rgb(50, 12, 50);
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
@@ -60,6 +68,7 @@ nav {
   font-size: small;
   font-weight: 600;
   color: rgb(130, 130, 130);
+  margin-bottom: 10px;
 }
 
 
@@ -67,78 +76,140 @@ nav {
 /* Main body of app */
 main {
   display: flex;
-  height: calc(100% - 89px);
+  height: calc(100% - 93px);
 }
 
 
 
 /* Note selection window */
-#notes {
+#tabs-bar {
   display: flex;
   flex-direction: column;
   width: 20%;
 }
 
-#notes-header {
+#tabs-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 55px;
   border-top: 1px solid lightgrey;
   border-bottom: 2px solid lightgrey;
-  padding: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 15px;
 }
 
 #add-note {
+  display: flex;
   font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50px;
 }
-#add-note:hover {
-  cursor: pointer;
+
+#tabs {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 .tab {
-  padding: 10px;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80px;
+  max-height: 120px;
+  width: 100%;
   border-bottom: 1px solid lightgrey;
 }
 
+.current-tab {
+  background-color: rgb(50, 12, 50);
+  color: white;
+}
+
 .tab-title {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.tab-date {
+  margin-left: 10px;
   margin-bottom: 10px;
+  font-size: 12px;
+  color: rgb(143, 143, 143);
+}
+
+.tab-text {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  font-size: small;
+  overflow: unset;
+  overflow-wrap: break-word;
 }
 
 
 
 
 /* Note */
-.note{
+.note {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: stretch;
+}
+.note.saved > .note-header {
+  border-bottom: 1px solid lightgrey;
+}
+.note.saved .ql-toolbar {
+  display: none;
+}
+.note.saved .ql-container {
+  max-height: 100%;
 }
 
 
 /* Note title and info */
 .note-header {
   display: flex;
+  justify-content: space-between;
   height: 90px;
   border-top: 1px solid lightgrey;
   border-left: 1px solid lightgrey;
 }
 
 .note-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
-  width: 85%;
-  padding: 20px;
+  width: calc(100% - 180px);
+}
+
+.note-title {
+  margin-left: 20px;
+  margin-bottom: 8px;
+  font-size: x-large;
 }
 
 .note-title-input {
-  width: 100%;
+  width: 90%;
+  margin-left: 20px;
   font-size: x-large;
   border: none;
   resize: none;
   outline: none;
 }
 
+.note-date {
+  margin-left: 20px;
+  font-size: small;
+  color: rgb(143, 143, 143);
+}
+
 input[type="datetime-local"] {
+  margin-left: 20px;
   border: none;
   font-size: small;
   font-family: 'Courier New', Courier, monospace;
@@ -146,13 +217,16 @@ input[type="datetime-local"] {
 
 .note-buttons {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   height: 100%;
-  width: 15%;
+  min-width: 180px;
 }
-.note-buttons > *:hover {
-  cursor: pointer;
+.note-buttons > * {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -161,16 +235,19 @@ input[type="datetime-local"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: stretch;
   font-size: xx-large;
   font-weight: 500;
   color: rgb(130, 130, 130);
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }
 
 .quill {
   height: calc(100% - 90px);
   width: 100%;
 }
-.ql-container.ql-snow {
-  height: calc(100% - 42px);
+.ql-container {
+  max-height: calc(100% - 42px);
+  max-width: 100%;
 }

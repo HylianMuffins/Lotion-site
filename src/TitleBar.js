@@ -1,7 +1,8 @@
-function TitleBar() {
+function TitleBar({tabsVisible, setTabsVisible}) {
+
   return (
     <nav>
-      <p id="burger-button">&#9776;</p>
+      <div id="burger-button" className="button" onClick={() => (tabsVisible) ? setTabsVisible(false):setTabsVisible(true)}>&#9776;</div>
       <div id="page-title">
         <h1 id="page-name">Lotion</h1>
         <p id="page-caption">Like Notion, but worse.</p>
