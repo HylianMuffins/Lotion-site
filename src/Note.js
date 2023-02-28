@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -12,6 +12,7 @@ function Note() {
   let {title, date, text} = noteInfo;
 
   const [value, setValue] = useState(text);
+  useEffect(() => { setValue(text)}, [text] )
   const titleElement = useRef();
   const dateElement = useRef();
 

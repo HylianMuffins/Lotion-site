@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -10,8 +10,10 @@ function SavedNote() {
   const noteList = JSON.parse(localStorage.getItem("noteList"));
   const noteInfo = noteList[noteNumber - 1];
   let {title, date, text} = noteInfo;
+  console.log(text);
 
   const [value, setValue] = useState(text);
+  useEffect(() => { setValue(text)}, [text] )
 
   const deleteNote = () => {
     const answer = window.confirm("Are you sure?");
