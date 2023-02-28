@@ -26,7 +26,7 @@ html, body, #root {
 }
 .button:hover {
   cursor: pointer;
-  background-color: rgb(50, 12, 50);
+  background-color: black;
   color: white;
 }
 
@@ -36,7 +36,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: center;
-  border-top: 6px solid rgb(50, 12, 50);
+  border-top: 6px solid rgb(69, 69, 69);
 }
 
 #burger-button {
@@ -59,7 +59,7 @@ nav {
 
 #page-name {
   font-size: xx-large;
-  color: rgb(50, 12, 50);
+  color: black;
   margin-top: 15px;
   margin-bottom: 5px;
 }
@@ -125,8 +125,8 @@ main {
 }
 
 .current-tab {
-  background-color: rgb(50, 12, 50);
-  color: white;
+  background-color: rgb(203, 203, 203);
+  color: black;
 }
 
 .tab-title {
