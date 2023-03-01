@@ -61,6 +61,7 @@ function Note() {
         theme="snow" 
         value={value}
         onChange={setValue} 
+        placeholder="Your Note Here"
         modules={{
           clipboard: {
             matchVisual: false
