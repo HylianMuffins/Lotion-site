@@ -120,7 +120,8 @@ main {
   justify-content: space-between;
   min-height: 80px;
   max-height: 120px;
-  width: 100%;
+  width: calc(100% - 15px);
+  padding-left: 15px;
   border-bottom: 1px solid lightgrey;
 }
 
@@ -130,19 +131,16 @@ main {
 }
 
 .tab-title {
-  margin-left: 10px;
   margin-top: 10px;
 }
 
 .tab-date {
-  margin-left: 10px;
   margin-bottom: 10px;
   font-size: 12px;
   color: rgb(143, 143, 143);
 }
 
 .tab-text {
-  margin-left: 10px;
   margin-bottom: 10px;
   max-width: 100%;
   font-size: small;
@@ -188,14 +186,14 @@ main {
 }
 
 .note-title {
-  margin-left: 20px;
+  margin-left: 15px;
   margin-bottom: 8px;
   font-size: x-large;
 }
 
 .note-title-input {
   width: 90%;
-  margin-left: 20px;
+  margin-left: 15px;
   font-size: x-large;
   border: none;
   resize: none;
@@ -203,14 +201,14 @@ main {
 }
 
 .note-date {
-  margin-left: 20px;
+  margin-left: 15px;
   margin-right: auto;
   font-size: small;
   color: rgb(143, 143, 143);
 }
 
 input[type="datetime-local"] {
-  margin-left: 20px;
+  margin-left: 15px;
   margin-right: auto;
   border: none;
   font-size: small;
